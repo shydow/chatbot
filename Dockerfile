@@ -3,6 +3,7 @@ FROM centos
 Maintainer Shydow Lee
 
 ENV chatbot /app/chatbot
+WORKDIR ${appDir}
 
 RUN \
 	yum -y update && \
@@ -14,16 +15,17 @@ RUN \
 	yum -y install python36u-devel
 
 RUN \
-	alias python=python3.6
-	alias pip=pip3.6
+	python3.6 -m venv p3 && \
+	source p3/bin/activate && \
 	python --version && \
 	pip -V && \
+
+RUN \
 	pip install chatterbot && \
 	pip install hug
 
 RUN "hug -f bot.py"
 
-WORKDIR ${appDir}
 ADD bot.py
 
 EXPOSE 8000
