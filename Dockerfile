@@ -1,29 +1,24 @@
-FROM centos
+FROM ubuntu
 
 Maintainer Shydow Lee
 
-ENV chatbot /app/chatbot
 ADD bot.py /app/chatbot/
 
-RUN \
-	yum -y update && \
-	yum -y install yum-utils && \
-	yum -y groupinstall development && \
-	yum -y install https://centos7.iuscommunity.org/ius-release.rpm && \
-	yum -y install python36u && \
-	yum -y install python36u-pip && \
-	yum -y install python36u-devel
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
 
 RUN \
 	cd /app/chatbot && \
-	pip3.6 -V && \
-	pip3.6 install chatterbot && \
-	pip3.6 install hug && \
-	python3.6 -m venv p3 && \
+	python -m venv p3 && \
 	source p3/bin/activate && \
 	python --version
-
-RUN "hug -f bot.py"
+	pip -V && \
+	pip install chatterbot && \
+	pip install hug && \
+	hug -f bot.py
 
 EXPOSE 8000
 
