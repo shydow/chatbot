@@ -3,6 +3,7 @@ FROM centos
 Maintainer Shydow Lee
 
 ENV chatbot /app/chatbot
+ADD bot.py
 
 RUN \
 	yum -y update && \
@@ -18,14 +19,12 @@ RUN \
 	cd /app/chatbot && \
 	pip3.6 -V && \
 	pip3.6 install chatterbot && \
-	pip3.6 install hug
+	pip3.6 install hug && \
 	python3.6 -m venv p3 && \
 	source p3/bin/activate && \
-	python --version && \
+	python --version
 
 RUN "hug -f bot.py"
-
-ADD bot.py
 
 EXPOSE 8000
 
