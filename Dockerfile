@@ -3,7 +3,7 @@ FROM centos
 Maintainer Shydow Lee
 
 ENV chatbot /app/chatbot
-ADD bot.py
+ADD bot.py /app/chatbot
 
 RUN \
 	yum -y update && \
