@@ -5,7 +5,7 @@ Maintainer Shydow Lee
 ADD bot.py /app/chatbot/
 
 RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev \
+  && apt-get install -y python3-pip python3-dev python3-venv \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
