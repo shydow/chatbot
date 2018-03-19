@@ -15,6 +15,10 @@ RUN \
 	pip install chatterbot && \
 	pip install hug
 
+RUN \
+	python -V && \
+	pip -V
+
 RUN "hug -f bot.py"
 
 WORKDIR ${appDir}
