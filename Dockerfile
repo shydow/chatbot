@@ -12,12 +12,12 @@ RUN \
 	yum -y install python36u && \
 	yum -y install python36u-pip && \
 	yum -y install python36u-devel && \
-	pip install chatterbot && \
-	pip install hug
 
 RUN \
 	python -V && \
-	pip -V
+	pip -V && \
+	pip install chatterbot && \
+	pip install hug
 
 RUN "hug -f bot.py"
 
