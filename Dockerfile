@@ -19,7 +19,7 @@ RUN \
 	python3.6 -m venv p3 && \
 	source p3/bin/activate && \
 	python --version && \
-	pip -V && \
+	pip -V
 
 RUN \
 	pip install chatterbot && \
