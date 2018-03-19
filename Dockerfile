@@ -16,12 +16,12 @@ RUN \
 RUN \
 	mkdir -p /app/chatbot && \
 	cd /app/chatbot && \
+	pip3.6 -V && \
+	pip3.6 install chatterbot && \
+	pip3.6 install hug
 	python3.6 -m venv p3 && \
 	source p3/bin/activate && \
 	python --version && \
-	pip -V && \
-	pip install chatterbot && \
-	pip install hug
 
 RUN "hug -f bot.py"
 
