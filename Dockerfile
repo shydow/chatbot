@@ -14,10 +14,12 @@ RUN \
 	yum -y install python36u-devel
 
 RUN \
-	python3.6 --version && \
-	pip3.6 -V && \
-	pip3.6 install chatterbot && \
-	pip3.6 install hug
+	alias python=python3.6
+	alias pip=pip3.6
+	python --version && \
+	pip -V && \
+	pip install chatterbot && \
+	pip install hug
 
 RUN "hug -f bot.py"
 
