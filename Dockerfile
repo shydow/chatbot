@@ -14,10 +14,10 @@ RUN \
 	cd /app/chatbot && \
 	python -m venv p3 && \
 	source p3/bin/activate && \
-	python --version
-	pip3 -V && \
-	pip3 install chatterbot && \
-	pip3 install hug && \
+	python --version && \
+	pip -V && \
+	pip install chatterbot && \
+	pip install hug && \
 	hug -f bot.py
 
 EXPOSE 8000
