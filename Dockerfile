@@ -15,9 +15,9 @@ RUN \
 
 RUN \
 	python -V && \
-	pip -V && \
-	pip install chatterbot && \
-	pip install hug
+	pip3 -V && \
+	pip3 install chatterbot && \
+	pip3 install hug
 
 RUN "hug -f bot.py"
 
