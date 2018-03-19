@@ -3,7 +3,6 @@ FROM centos
 Maintainer Shydow Lee
 
 ENV chatbot /app/chatbot
-WORKDIR ${appDir}
 
 RUN \
 	yum -y update && \
@@ -15,6 +14,8 @@ RUN \
 	yum -y install python36u-devel
 
 RUN \
+	mkdir -p /app/chatbot && \
+	cd /app/chatbot && \
 	python3.6 -m venv p3 && \
 	source p3/bin/activate && \
 	python --version && \
