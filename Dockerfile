@@ -19,9 +19,7 @@ RUN \
 	python3.6 -m venv p3 && \
 	source p3/bin/activate && \
 	python --version && \
-	pip -V
-
-RUN \
+	pip -V && \
 	pip install chatterbot && \
 	pip install hug
 
