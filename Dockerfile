@@ -15,8 +15,9 @@ RUN \
 	python --version && \
 	pip -V && \
 	pip install chatterbot && \
-	pip install hug && \
-	hug -f bot.py
+	pip install hug
+
+CMD	["hug", "-f", "bot.py"]
 
 EXPOSE 8000
 
