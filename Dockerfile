@@ -2,7 +2,7 @@ FROM ubuntu
 
 Maintainer Shydow Lee
 
-ADD bot.py /app/chatbot/
+ADD https://raw.githubusercontent.com/shydow/chatbot/master/bot.py /app/chatbot/
 
 RUN apt-get update \
   && apt-get install -y python3-pip python3-dev \
