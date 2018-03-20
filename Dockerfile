@@ -17,7 +17,7 @@ RUN \
 	pip install chatterbot && \
 	pip install hug
 
-CMD	["hug", "-f", "bot.py"]
+CMD	["hug", "-f", "/app/chatbot/bot.py"]
 
 EXPOSE 8000
 
