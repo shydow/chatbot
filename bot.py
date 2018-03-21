@@ -13,7 +13,7 @@ deepThought.train("chatterbot.corpus.chinese")  # 语料库
 
 
 @hug.get()
-def get_response(user_input):
+def chat(input):
     response = deepThought.get_response(user_input).text
     return {"response":response}
 
