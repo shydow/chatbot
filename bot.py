@@ -6,14 +6,14 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 import hug
 
 
-deepThought = ChatBot("deepThought")
-deepThought.set_trainer(ChatterBotCorpusTrainer)
+bot = ChatBot("simpleBot")
+bot.set_trainer(ChatterBotCorpusTrainer)
 # 使用中文语料库训练它
-deepThought.train("chatterbot.corpus.chinese")  # 语料库
+bot.train("chatterbot.corpus.chinese")  # 语料库
 
 
 @hug.get()
 def chat(input):
-    response = deepThought.get_response(user_input).text
+    response = bot.get_response(input).text
     return {"response":response}
 
