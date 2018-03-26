@@ -20,6 +20,7 @@ RUN \
 WORKDIR /app/chatbot
 CMD	["hug", "-f", "bot.py"]
 
+VOLUME /app/chatbot/data
 EXPOSE 8000
 
 

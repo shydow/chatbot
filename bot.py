@@ -9,7 +9,10 @@ import hug
 bot = ChatBot("simpleBot")
 bot.set_trainer(ChatterBotCorpusTrainer)
 # 使用中文语料库训练它
-bot.train("chatterbot.corpus.chinese")  # 语料库
+bot.train(
+	"chatterbot.corpus.chinese"
+	"/app/chatbot/data/"
+)  # 语料库
 
 
 @hug.get()
