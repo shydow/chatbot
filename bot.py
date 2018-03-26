@@ -10,8 +10,8 @@ bot = ChatBot("simpleBot")
 bot.set_trainer(ChatterBotCorpusTrainer)
 # 使用中文语料库训练它
 bot.train(
-	"chatterbot.corpus.chinese"
-	"/app/chatbot/data/"
+	"chatterbot.corpus.chinese",
+	"./data/"
 )  # 语料库
 
 
