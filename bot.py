@@ -13,7 +13,6 @@ bot = ChatBot(
         "chatterbot.logic.TimeLogicAdapter",
         "chatterbot.logic.BestMatch"
     ],
-    input_adapter="chatterbot.input.TerminalAdapter",
     output_adapter="chatterbot.output.TerminalAdapter",
     database="../database.db"
 )
