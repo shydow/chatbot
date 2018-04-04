@@ -5,8 +5,18 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import hug
 
-
-bot = ChatBot("simpleBot")
+bot = ChatBot(
+    "sample",
+    storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    logic_adapters=[
+        "chatterbot.logic.MathematicalEvaluation",
+        "chatterbot.logic.TimeLogicAdapter",
+        "chatterbot.logic.BestMatch"
+    ],
+    input_adapter="chatterbot.input.TerminalAdapter",
+    output_adapter="chatterbot.output.TerminalAdapter",
+    database="../database.db"
+)
 bot.set_trainer(ChatterBotCorpusTrainer)
 # 使用中文语料库训练它
 bot.train(
