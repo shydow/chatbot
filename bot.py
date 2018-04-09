@@ -4,6 +4,9 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import hug
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 bot = ChatBot(
     "sample",
